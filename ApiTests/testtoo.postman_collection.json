@@ -1,0 +1,340 @@
+{
+  "info": {
+    "_postman_id": "d54be43d-6e90-44b4-a8ac-b061ff5ad590",
+    "name": "Helmes_testtoo2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "9319536"
+  },
+  "item": [
+    {
+      "name": "GetAllBags",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response is not empty\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.length).to.be.above(0);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "{{url}}/api/Bags",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "Bags"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AddBag",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {",
+              "    pm.response.to.have.status(400);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"bagNumber\": \"12345\", \"bagWeight\": 10, \"bagPrice\": 100, \"shipmentId\": 1, \"isLetter\": false, \"letterCount\": 0, \"parcelCount\": 0}"
+        },
+        "url": {
+          "raw": "{{url}}/api/Bags",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "Bags"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteBag",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {",
+              "    pm.response.to.have.status(400);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "{{url}}/api/Bags/1",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "Bags",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAllParcels",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response is not empty\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.length).to.be.above(0);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "{{url}}/api/Parcels",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "Parcels"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "AddParcel",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {",
+              "    pm.response.to.have.status(400);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"parcelNumber\": \"ABCDE\", \"recipientName\": \"John Doe\", \"destinationCountry\": \"USA\", \"weight\": 5, \"price\": 50, \"currency\": \"USD\", \"isLetter\": false, \"bagId\": 1}"
+        },
+        "url": {
+          "raw": "{{url}}/api/Parcels",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "Parcels"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteParcel",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {",
+              "    pm.response.to.have.status(400);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "{{url}}/api/Parcels/1",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "Parcels",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GetAllShipments",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"Response is not empty\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.length).to.be.above(0);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "{{url}}/api/Shipments",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "Shipments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "CreateShipment",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 400\", function () {",
+              "    pm.response.to.have.status(400);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"shipmentNumber\": \"SH123\", \"airport\": \"JFK\", \"flightNumber\": \"AB123\", \"flightDate\": \"2024-05-21T12:00:00\", \"isFinalized\": false}"
+        },
+        "url": {
+          "raw": "{{url}}/api/Shipments",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "Shipments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "DeleteShipment",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 404\", function () {",
+              "    pm.response.to.have.status(404);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {},
+        "url": {
+          "raw": "{{url}}/api/Shipments/1",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "api",
+            "Shipments",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
