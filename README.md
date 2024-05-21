@@ -1,6 +1,6 @@
 # Test Assignment 
 
-Hello! This web-application is for managing parcels and letters in a post office. I made this project using Angular for front-end and InMemoryDatabase for the database. The code is made in 2 days. 
+Hello! This web-application is for managing parcels and letters in a post office. I made this project using Angular for front-end and InMemoryDatabase for the database. The code is made in 2 days. I added Postman ApiTests to check the Api Controllers.
 
 # Files
 
@@ -25,3 +25,4 @@ To install and run this application locally on your machine, follow these steps:
 ## Usage
 
 Upon launching the application, you can click on the "Shipment info" box, which will toggle and display more information about Shipments and Bags. Backend includes entity validations. I utilized Swagger to gain a better overview of the Backend and to test the functionality of the API controllers.
+To use the ApiTests, I run my project and write in my terminal `newman run apitests/testtoo.postman_collection.json -e apitests/testtoo.postman_environment.json`
